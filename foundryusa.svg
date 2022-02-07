@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>foundry</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="画板" transform="translate(-186.000000, -2316.000000)">
+            <g id="编组-3" transform="translate(186.000000, 2316.000000)">
+                <rect id="矩形" fill="#023D32" x="0" y="0" width="80" height="80" rx="8"></rect>
+                <path d="M61.6666667,9.16666667 L61.6666667,17.0041667 L46.2625,17.0041667 C46.2625,17.0041667 44.1666667,16.6666667 44.1666667,18.3333333 L44.1666667,25.8025 L61.6666667,25.8025 L61.6666667,34.7391667 L44.1666667,34.7391667 L44.1666667,70.5575 L31.7825,70.5575 L31.7825,35 L19.1666667,35 L19.1666667,25.595 L31.6666667,25.595 L31.6666667,17.5 C31.6666667,17.5 32.5,9.16666667 40.4166667,9.16666667 L61.6666667,9.16666667 Z" id="Fill-1" fill="#86E2A0"></path>
+            </g>
+        </g>
+    </g>
+</svg>
