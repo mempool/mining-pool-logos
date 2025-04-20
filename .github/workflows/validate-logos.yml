@@ -9,6 +9,7 @@ on:
 
 jobs:
   svg_validator:
+    name: Validate SVG logos
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
