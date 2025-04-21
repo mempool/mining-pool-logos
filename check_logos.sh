@@ -5,7 +5,7 @@ found_js=false
 for file in *.svg; do
     [ -f "$file" ] || continue
     
-    if grep -i -E '<script' "$file" > /dev/null; then
+    if grep -i -E 'script' "$file" > /dev/null; then
         echo "Javascript found in: $file"
         found_js=true
     fi
