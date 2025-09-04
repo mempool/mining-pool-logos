@@ -1,0 +1,20 @@
+name: SVG Check
+
+on:
+  push:
+    paths:
+      - "**.svg"
+  pull_request:
+    types: [opened, review_requested, synchronize]
+
+jobs:
+  svg_validator:
+    name: Validate SVG logos
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Check for script in SVG logos
+        run : |
+          sh check_logos.sh
