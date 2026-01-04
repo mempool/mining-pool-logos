@@ -48,6 +48,24 @@ for (const file of files) {
     const originalDOM = new JSDOM(svgContent, { contentType: 'image/svg+xml' });
     const sanitizedDOM = new JSDOM(cleanSVG, { contentType: 'image/svg+xml' });
     
+    const externalUrlPattern = /^(https?|ftp):\/\//i;
+    const imageElements = originalDOM.window.document.querySelectorAll('image');
+    const useElements = originalDOM.window.document.querySelectorAll('use');
+
+    imageElements.forEach((img, index) => {
+      const href = img.getAttribute('href') || img.getAttribute('xlink:href');
+      if (href && externalUrlPattern.test(href.trim())) {
+        issues.push(`Found external URL in image element: ${href}`);
+      }
+    });
+
+    useElements.forEach((use, index) => {
+      const href = use.getAttribute('href') || use.getAttribute('xlink:href');
+      if (href && externalUrlPattern.test(href.trim())) {
+        issues.push(`Found external URL in use element: ${href}`);
+      }
+    });
+
     const originalScripts = originalDOM.window.document.querySelectorAll('script');
     const sanitizedScripts = sanitizedDOM.window.document.querySelectorAll('script');
     
