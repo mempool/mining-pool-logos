@@ -1,0 +1,20 @@
+{
+  "name": "mining-pool-logos",
+  "version": "1.0.0",
+  "description": "SVG logo checker",
+  "type": "module",
+  "bin": {
+    "check_logos": "./check_logos.js"
+  },
+  "scripts": {
+    "validate": "node check_logos.js"
+  },
+  "dependencies": {
+    "dompurify": "^3.0.8",
+    "jsdom": "^24.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
+

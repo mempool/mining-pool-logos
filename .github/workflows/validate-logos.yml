@@ -15,6 +15,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Check for script in SVG logos
-        run : |
-          sh check_logos.sh
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Check for unsafe content in SVG logos
+        run: node check_logos.js
