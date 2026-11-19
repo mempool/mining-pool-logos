@@ -10,7 +10,7 @@
     "validate": "node check_logos.js"
   },
   "dependencies": {
-    "dompurify": "^3.0.8",
+    "dompurify": "^3.4.17",
     "jsdom": "^24.0.0"
   },
   "engines": {
